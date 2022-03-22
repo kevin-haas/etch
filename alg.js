@@ -1,6 +1,7 @@
 function addBox () {
     const newBox = document.createElement('div');
     newBox.className = 'box';
+    newBox.onmouseenter = function() {newBox.classList.add('hover');};
     const container = document.querySelector('.row:last-child');
     container.appendChild(newBox);
 }
@@ -16,4 +17,3 @@ for (let i = 0; i < 16; i++) {
     }
 
 }
-
