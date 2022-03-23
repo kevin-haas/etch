@@ -1,3 +1,5 @@
+const board = document.querySelector('.board');
+
 function addBox () {
     const newBox = document.createElement('div');
     newBox.className = 'box';
@@ -6,14 +8,14 @@ function addBox () {
     container.appendChild(newBox);
 }
 
-const board = document.querySelector('.board');
-
-for (let i = 0; i < 16; i++) {
-    const newRow = document.createElement('div');
-    newRow.className = 'row';
-    board.appendChild(newRow);
-    for (let j = 0; j < 16; j++) {
-        addBox();
+function initialize(x, y) {
+    for (let i = 0; i < y; i++) {
+        const newRow = document.createElement('div');
+        newRow.className = 'row';
+        board.appendChild(newRow);
+        for (let j = 0; j < x; j++) {
+            addBox();
+        }
     }
 }
 
@@ -21,3 +23,5 @@ function reset() {
     const boxes = document.querySelectorAll('.hover');
     boxes.forEach(box => box.classList.remove('hover'));
 }
+
+initialize(16, 16);
