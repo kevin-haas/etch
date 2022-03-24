@@ -24,4 +24,17 @@ function reset() {
     boxes.forEach(box => box.classList.remove('hover'));
 }
 
+function resize() {
+    let x = prompt("Please enter an x value.");
+    let y = prompt("Please enter a y value.");
+    if ((x < 101) && (y < 101)) {
+        while (board.firstChild) {
+            board.removeChild(board.firstChild);
+        }
+        initialize(x, y);
+        return;
+    }
+    alert('Neither axis may be over 100');
+}
+
 initialize(16, 16);
